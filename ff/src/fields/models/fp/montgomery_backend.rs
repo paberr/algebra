@@ -367,7 +367,7 @@ pub trait MontConfig<const N: usize>: 'static + Sync + Send + Sized {
     }
 
     #[inline]
-    #[unroll_for_loops(12)]
+    // #[unroll_for_loops(12)]
     #[allow(clippy::modulo_one)]
     fn into_bigint(a: Fp<MontBackend<Self, N>, N>) -> BigInt<N> {
         let mut tmp = a.0;
